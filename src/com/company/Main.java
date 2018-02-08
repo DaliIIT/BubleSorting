@@ -10,7 +10,7 @@ public class Main {
         int[] Arr1 = new int[NumElms];
         int[] Arr2 = new int[NumElms];
 
-        InitialArr = SortingMethods.InitializeArray(NumElms,MaxVal);
+        InitialArr = SortingMethods.InitializeArray(NumElms,MaxVal); //
 
 
 
