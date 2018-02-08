@@ -4,16 +4,23 @@ public class Main {
 
     public static void main(String[] args) {
 
-        int NumElms = 100;
-        int[] Arr = new int[NumElms];
+        int NumElms = 100000;
+        int MaxVal = 1000;
+        int[] InitialArr = new int[NumElms];
+        int[] Arr1 = new int[NumElms];
+        int[] Arr2 = new int[NumElms];
 
-        Arr = SortingMethods.InitializeArray(NumElms);
+        InitialArr = SortingMethods.InitializeArray(NumElms,MaxVal);
 
-        SortingMethods.PrintArray(Arr,"Unsorted elements:");
 
-        SortingMethods.BubleSorting(Arr);
 
-        SortingMethods.PrintArray(Arr,"Sorted elements:");
+        SortingMethods.PrintArray(InitialArr,"Unsorted elements:");
+        Arr1 = SortingMethods.BubleSorting(InitialArr);
+        SortingMethods.PrintArray(Arr1,"Sorted elements. Buble sorting:");
+
+        int MaxValue = 1000;
+        Arr2 = SortingMethods.BucketSorting(InitialArr, MaxValue);
+        SortingMethods.PrintArray(Arr2,"Sorted elements.Bucket sorting:");
 
     }
 }
