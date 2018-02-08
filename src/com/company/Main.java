@@ -1,24 +1,37 @@
 package com.company;
 
 import java.lang.reflect.Array;
+import java.sql.Time;
+import java.time.LocalDateTime;
+
+import static java.lang.Math.random;
 
 
 public class Main {
 
     public static void main(String[] args) {
 
-        int[] Arr = new int[]{2, 1, 3, 23, 12, 56, 1, 4, 8, 9, 11, 10, 4};
+        int[] Arr = new int[100000];
         int i,j,k;
+
+        for (k = 0; k < Arr.length; k++) {
+            Arr[k] = (int) (Math.random()*100000);
+        }
+
 
         System.out.println("Unsorted elements:");
 
         for (k = 0; k < Arr.length; k++) {
-            System.out.println("№: " + k + " value:" + Arr[k]);
+            System.out.println("№:" + k + " value:" + Arr[k]);
         }
+
+
+        long StartDate = System.currentTimeMillis();
 
 
             for (i = 0; i < Arr.length; i++) {
 
+//                Boolean Swapped = false;
                 for (j = 0; j < Arr.length - i -1; j++) {
 
 
@@ -27,13 +40,19 @@ public class Main {
                         Arr[j + 1] = Arr[j];
                         Arr[j] = Temp;
 
-                    } else {
-
-
-                    }
-                    ;
+//                        Swapped = true;
+                    };
                 }
+
+//                if (Swapped = false) {
+//
+//                    break;
+//                };
             }
+
+
+         long EndDate = System.currentTimeMillis();
+
 
         System.out.println("Sorted elements:");
 
@@ -41,6 +60,12 @@ public class Main {
         for (k = 0; k < Arr.length; k++) {
             System.out.println("№: " + k + " value:" + Arr[k]);
         }
+
+
+
+        long Time = (EndDate - StartDate)/1000;
+
+        System.out.println(" Time elapsed, s:" + Time);
 
 
     }
